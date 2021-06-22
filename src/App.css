@@ -1,38 +1,127 @@
-.App {
+*, *::before, ::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto;
+  font-size: 14px;
+  color: #404040;
+}
+
+button {
+  width: 37px;
+  height: 37px;
+  margin: 0;
+  padding: 0;
+  line-height: 20px;
   text-align: center;
+  background: #fff;
+  border: 1px solid #404040;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.row {
+  display: flex;
+  flex-direction: row;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.notes-app {
+  padding: 27px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.notes-app-title {
+  margin-bottom: 30px;
+}
+
+.notes-title {
+  margin-right: 20px;
+  font-size: 30px;
+}
+
+.notes-upload {
+  font-size: 30px;
+  color: #2ACE55;
+}
+
+.notes-upload:active {
+  background-color: #90ee90;
+}
+
+.notes-panel {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.note {
+  position: relative;
+  width: 240px;
+  height: 172px;
+  margin: 0 40px 27px 0;
+  padding: 27px;
+  border: 1px solid #404040;
+}
+
+.note-content {
+  width: 100%;
+  height: 100%;
+  line-height: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note-delete {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  font-size: 30px;
+  color: #FE3A3D;
+}
+
+.note-delete:active {
+  background-color: #fec3c4;
+}
+
+.notes-form {
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-bottom: 25px;
+}
+
+.form-field {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.form-field label {
+  margin-bottom: 14px;
+  margin-left: 10px;
+  font-size: 14px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.notes-form textarea {
+  width: 341px;
+  height: 113px;
+  padding: 10px;
+  padding-right: 45px;
+  font-family: Roboto;
+  font-size: 14px;
+  resize: none;
+  outline: none;
+}
+
+.notes-send {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 20px;
+  color: #000;
+}
+
+.notes-send:active {
+  background-color: #cccccc;
 }
