@@ -8,6 +8,10 @@ export default class NotesApp extends Component {
     this.state = {notes: []};
   }
 
+  componentDidMount() {
+    this.loadNotes();
+  }
+
   loadNotes = () => {
     fetch(process.env.REACT_APP_NOTES_URL)
     .then(response => response.json())
@@ -30,10 +34,6 @@ export default class NotesApp extends Component {
       method: 'DELETE'
     })
     .then(() => this.loadNotes());
-  }
-
-  componentDidMount() {
-    this.loadNotes();
   }
 
   render() {
